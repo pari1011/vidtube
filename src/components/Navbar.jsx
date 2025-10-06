@@ -14,7 +14,7 @@ import notification from '../assets/notification.png';
 
 
 
-const Navbar = () => {
+const Navbar = ({ onToggleSidebar }) => {
 
   const [user, setUser] = useState(null);
 
@@ -38,8 +38,13 @@ const Navbar = () => {
   return (
     <nav className='flex justify-between px-5 py-3 shadow-md '>
         <div className='flex items-center gap-5'>
-            <img className='h-4 hover:cursor-pointer ' src={menu}/>
+            <button
+            onClick={ onToggleSidebar }>
+                <img className='h-4 hover:cursor-pointer ' src={menu}/>
+            </button>
+            
             <img className='h-8 hover:cursor-pointer ' src={logo}/>
+           
 
         </div>
         <div className='flex border-2 rounded-full border-gray-200 px-3'>
